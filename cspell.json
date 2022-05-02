@@ -1,15 +1,19 @@
 {
   "language": "en-GB",
   "words": [
+    "Coholic",
     "commitlint",
+    "commitlintrc",
+    "dbaeumer",
     "docgen",
+    "Jsii",
+    "Klozoff",
     "mountainpass",
+    "outdir",
     "projen",
     "projenrc",
-    "unbump",
-    "dbaeumer",
-    "outdir",
-    "Coholic",
-    "Klozoff"
+    "Pypi",
+    "rootdir",
+    "unbump"
   ]
 }

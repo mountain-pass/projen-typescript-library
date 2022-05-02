@@ -1,6 +1,6 @@
 # projen-typescript-library
 
-A custom Typescript projen project type with extra linting
+A customised Typescript project type with extra linting for Projen
 
 ## usage
 
@@ -11,5 +11,5 @@ A custom Typescript projen project type with extra linting
 gh auth login -w -p https
 gh repo create mountain-pass/my-new-project --public --clone
 cd my-new-project
-projen new --from @mountainpass/projen-typescript-library
+npx projen new --from @mountainpass/projen-typescript-library
 ```

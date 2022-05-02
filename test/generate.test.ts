@@ -6,6 +6,10 @@ test("all required files are added", () => {
   const project = new MountainPassTypeScriptProject({
     outdir: mkdtemp(),
     name: "test-project",
+    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
+    author: "Mountain Pass",
+    authorAddress: "info@mountain-pass.com.au",
+    defaultReleaseBranch: "main",
   });
 
   // THEN
@@ -37,6 +41,10 @@ test("works with bits turned off", () => {
     eslintUnicorn: false,
     cSpell: false,
     vscodeExtensions: false,
+    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
+    author: "Mountain Pass",
+    authorAddress: "info@mountain-pass.com.au",
+    defaultReleaseBranch: "main",
   });
 
   // THEN
@@ -62,6 +70,10 @@ test("works with husky on and commitlint off", () => {
     eslintUnicorn: false,
     cSpell: false,
     vscodeExtensions: false,
+    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
+    author: "Mountain Pass",
+    authorAddress: "info@mountain-pass.com.au",
+    defaultReleaseBranch: "main",
   });
 
   // THEN
@@ -85,6 +97,10 @@ test("works with husky off and commitlint on", () => {
     eslintUnicorn: false,
     cSpell: false,
     vscodeExtensions: false,
+    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
+    author: "Mountain Pass",
+    authorAddress: "info@mountain-pass.com.au",
+    defaultReleaseBranch: "main",
   });
 
   // THEN
@@ -103,6 +119,10 @@ test("works with eslint off", () => {
     outdir: mkdtemp(),
     name: "test-project",
     eslint: false,
+    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
+    author: "Mountain Pass",
+    authorAddress: "info@mountain-pass.com.au",
+    defaultReleaseBranch: "main",
   });
 
   // THEN
@@ -120,6 +140,10 @@ test("can add contributors", () => {
   const project = new MountainPassTypeScriptProject({
     outdir: mkdtemp(),
     name: "test-project",
+    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
+    author: "Mountain Pass",
+    authorAddress: "info@mountain-pass.com.au",
+    defaultReleaseBranch: "main",
   });
   const contributors = [
     "Al Coholic <al@coholic.com>",
@@ -143,6 +167,10 @@ test("can add description", () => {
     outdir: mkdtemp(),
     name: "test-project",
     description,
+    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
+    author: "Mountain Pass",
+    authorAddress: "info@mountain-pass.com.au",
+    defaultReleaseBranch: "main",
   });
 
   // THEN
