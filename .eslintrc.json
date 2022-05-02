@@ -6,7 +6,10 @@
   "root": true,
   "plugins": [
     "@typescript-eslint",
-    "import"
+    "import",
+    "prettier",
+    "unicorn",
+    "jsdoc"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -15,7 +18,12 @@
     "project": "./tsconfig.dev.json"
   },
   "extends": [
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:jsdoc/recommended",
+    "prettier"
   ],
   "settings": {
     "import/parsers": {
@@ -38,104 +46,13 @@
     "*.d.ts",
     "node_modules/",
     "*.generated.ts",
-    "coverage"
+    "coverage",
+    "!.projenrc.ts",
+    "!projenrc/**/*.ts"
   ],
   "rules": {
-    "indent": [
-      "off"
-    ],
-    "@typescript-eslint/indent": [
-      "error",
-      2
-    ],
-    "quotes": [
-      "error",
-      "single",
-      {
-        "avoidEscape": true
-      }
-    ],
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "comma-spacing": [
-      "error",
-      {
-        "before": false,
-        "after": true
-      }
-    ],
-    "no-multi-spaces": [
-      "error",
-      {
-        "ignoreEOLComments": false
-      }
-    ],
-    "array-bracket-spacing": [
-      "error",
-      "never"
-    ],
-    "array-bracket-newline": [
-      "error",
-      "consistent"
-    ],
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
-    "object-curly-newline": [
-      "error",
-      {
-        "multiline": true,
-        "consistent": true
-      }
-    ],
-    "object-property-newline": [
-      "error",
-      {
-        "allowAllPropertiesOnSameLine": true
-      }
-    ],
-    "keyword-spacing": [
+    "prettier/prettier": [
       "error"
-    ],
-    "brace-style": [
-      "error",
-      "1tbs",
-      {
-        "allowSingleLine": true
-      }
-    ],
-    "space-before-blocks": [
-      "error"
-    ],
-    "curly": [
-      "error",
-      "multi-line",
-      "consistent"
-    ],
-    "@typescript-eslint/member-delimiter-style": [
-      "error"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "max-len": [
-      "error",
-      {
-        "code": 150,
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreComments": true,
-        "ignoreRegExpLiterals": true
-      }
-    ],
-    "quote-props": [
-      "error",
-      "consistent-as-needed"
     ],
     "@typescript-eslint/no-require-imports": [
       "error"
@@ -145,7 +62,9 @@
       {
         "devDependencies": [
           "**/test/**",
-          "**/build-tools/**"
+          "**/build-tools/**",
+          ".projenrc.ts",
+          "projenrc/**/*.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true
@@ -215,7 +134,37 @@
           "method"
         ]
       }
-    ]
+    ],
+    "unicorn/prefer-node-protocol": "off",
+    "jsdoc/require-jsdoc": [
+      "error",
+      {
+        "contexts": [
+          "TSInterfaceDeclaration",
+          "TSTypeAliasDeclaration",
+          "TSEnumDeclaration",
+          "PropertyDeclaration",
+          "ClassProperty",
+          "ClassDeclaration",
+          "MethodDefinition"
+        ]
+      }
+    ],
+    "jsdoc/require-description": [
+      "error",
+      {
+        "contexts": [
+          "any"
+        ]
+      }
+    ],
+    "jsdoc/check-indentation": "error",
+    "jsdoc/check-line-alignment": "error",
+    "jsdoc/check-syntax": "error",
+    "jsdoc/require-asterisk-prefix": "error",
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-param-description": "error",
+    "jsdoc/require-returns-type": "off"
   },
   "overrides": [
     {
@@ -225,6 +174,14 @@
       "rules": {
         "@typescript-eslint/no-require-imports": "off",
         "import/no-extraneous-dependencies": "off"
+      }
+    },
+    {
+      "files": [
+        ".projenrc.js"
+      ],
+      "rules": {
+        "unicorn/prefer-module": "off"
       }
     }
   ]
