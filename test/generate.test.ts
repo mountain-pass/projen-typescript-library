@@ -19,7 +19,7 @@ test("all required files are added", () => {
 
   expect(Object.keys(snapshot)).toContain(".commitlintrc.json");
   expect(Object.keys(snapshot)).toContain("cspell.json");
-  expect(Object.keys(snapshot)).toContain("vscode/extensions.json");
+  expect(Object.keys(snapshot)).toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).toContain(".husky/commit-msg");
   expect(Object.keys(snapshot)).toContain(".husky/pre-commit");
   // expect(snapshot[".dockerignore"]).toContain("*/node_modules");
@@ -54,7 +54,7 @@ test("works with bits turned off", () => {
 
   expect(Object.keys(snapshot)).not.toContain(".commitlintrc.json");
   expect(Object.keys(snapshot)).not.toContain("cspell.json");
-  expect(Object.keys(snapshot)).not.toContain("vscode/extensions.json");
+  expect(Object.keys(snapshot)).not.toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).not.toContain(".husky/commit-msg");
   expect(Object.keys(snapshot)).not.toContain(".husky/pre-commit");
 });
@@ -81,7 +81,7 @@ test("works with husky on and commitlint off", () => {
 
   expect(Object.keys(snapshot)).not.toContain(".commitlintrc.json");
   expect(Object.keys(snapshot)).not.toContain("cspell.json");
-  expect(Object.keys(snapshot)).not.toContain("vscode/extensions.json");
+  expect(Object.keys(snapshot)).not.toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).not.toContain(".husky/commit-msg");
   expect(Object.keys(snapshot)).toContain(".husky/pre-commit");
 });
@@ -108,7 +108,7 @@ test("works with husky off and commitlint on", () => {
 
   expect(Object.keys(snapshot)).toContain(".commitlintrc.json");
   expect(Object.keys(snapshot)).not.toContain("cspell.json");
-  expect(Object.keys(snapshot)).not.toContain("vscode/extensions.json");
+  expect(Object.keys(snapshot)).not.toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).not.toContain(".husky/commit-msg");
   expect(Object.keys(snapshot)).not.toContain(".husky/pre-commit");
 });
@@ -130,7 +130,7 @@ test("works with eslint off", () => {
 
   expect(Object.keys(snapshot)).toContain(".commitlintrc.json");
   expect(Object.keys(snapshot)).toContain("cspell.json");
-  expect(Object.keys(snapshot)).toContain("vscode/extensions.json");
+  expect(Object.keys(snapshot)).toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).toContain(".husky/commit-msg");
   expect(Object.keys(snapshot)).toContain(".husky/pre-commit");
 });

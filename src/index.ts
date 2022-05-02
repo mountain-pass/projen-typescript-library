@@ -180,7 +180,7 @@ export function maybeAddExtensionRecommendations(
   options: MountainPassTypeScriptProjectOptions
 ) {
   if (options.vscodeExtensions) {
-    new SampleFile(project, "vscode/extensions.json", {
+    new SampleFile(project, ".vscode/extensions.json", {
       contents: JSON.stringify(options.vscodeExtensionsOptions, undefined, 2),
     });
   }
