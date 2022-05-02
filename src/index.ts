@@ -122,8 +122,10 @@ export class MountainPassTypeScriptProject extends typescript.TypeScriptProject 
     );
 
     super(generatedOptions);
-
+    // need to make sure recent version of typedoc is installed
+    this.addDevDeps("typedoc@^0.22.15");
     // suggested vscode extensions
+
     this.maybeAddExtensionRecommendations(generatedOptions);
 
     this.maybeAddHusky(generatedOptions);
