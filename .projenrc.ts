@@ -12,17 +12,23 @@ import {
   maybeAddUnicorn,
 } from "./src";
 
+const name = "projen-typescript-library";
+
 const projectOptions = Object.assign(
   {},
   defaultMountainPassTypeScriptProjectOptions,
   {
-    name: "projen-typescript-library",
+    name,
     description:
       "A customised Typescript project type with extra linting for Projen",
     peerDeps: ["projen"],
     devDeps: ["fs-extra", "@types/fs-extra"],
     keywords: ["typescript", "projen", "jsii"],
-    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
+    packageName: `@mountainpass/${name}`,
+    homepage: `https://github.com/mountain-pass/${name}`,
+    repository: `https://github.com/mountain-pass/${name}.git`,
+    repositoryUrl: `https://github.com/mountain-pass/${name}.git`,
+    bugsUrl: `https://github.com/mountain-pass/${name}/issues`,
     author: "Mountain Pass",
     authorAddress: "info@mountain-pass.com.au",
     defaultReleaseBranch: "main",

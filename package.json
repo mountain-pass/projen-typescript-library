@@ -1,5 +1,5 @@
 {
-  "name": "projen-typescript-library",
+  "name": "@mountainpass/projen-typescript-library",
   "description": "A customised Typescript project type with extra linting for Projen",
   "repository": {
     "type": "git",
@@ -79,7 +79,14 @@
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/mountain-pass/projen-typescript-library",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
+  "bugs": {
+    "url": "https://github.com/mountain-pass/projen-typescript-library/issues"
+  },
   "jest": {
     "coverageThreshold": {
       "global": {
