@@ -52,6 +52,7 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+!/.vscode/extensions.json
 !/.husky/pre-commit
 !/.commitlintrc.json
 !/.husky/commit-msg

@@ -69,6 +69,7 @@ export const defaultMountainPassTypeScriptProjectOptions: Required<BaseMountainP
     recommendations: [
       "dbaeumer.vscode-eslint",
       "streetsidesoftware.code-spell-checker",
+      "MarkMcCulloh.vscode-projen",
     ],
   },
   jestOptions: {
@@ -183,6 +184,7 @@ export function maybeAddExtensionRecommendations(
     new SampleFile(project, ".vscode/extensions.json", {
       contents: JSON.stringify(options.vscodeExtensionsOptions, undefined, 2),
     });
+    project.addGitIgnore("!/.vscode/extensions.json");
   }
 }
 
