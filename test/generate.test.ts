@@ -22,12 +22,6 @@ test("all required files are added", () => {
   expect(Object.keys(snapshot)).toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).toContain(".husky/commit-msg");
   expect(Object.keys(snapshot)).toContain(".husky/pre-commit");
-  // expect(snapshot[".dockerignore"]).toContain("*/node_modules");
-  // expect(snapshot.Dockerfile).toContain(
-  //   "FROM --platform=${TARGETPLATFORM:-linux/amd64} openfaas/of-watchdog:0.7.2 as watchdog"
-  // );
-  // expect(snapshot["index.js"]).toContain("const express = require('express')");
-  // expect(snapshot["function/handler.js"]).toContain(".status(200)");
 });
 
 test("works with bits turned off", () => {

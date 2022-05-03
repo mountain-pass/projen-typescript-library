@@ -2,6 +2,7 @@
     "recommendations": [
         "streetsidesoftware.code-spell-checker",
         "dbaeumer.vscode-eslint",
-        "MarkMcCulloh.vscode-projen"
+        "markmcculloh.vscode-projen",
+        "adam-bender.commit-message-editor"
     ]
 }

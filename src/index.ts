@@ -70,6 +70,7 @@ export const defaultMountainPassTypeScriptProjectOptions: Required<BaseMountainP
       "dbaeumer.vscode-eslint",
       "streetsidesoftware.code-spell-checker",
       "MarkMcCulloh.vscode-projen",
+      "adam-bender.commit-message-editor",
     ],
   },
   jestOptions: {
@@ -87,6 +88,25 @@ export const defaultMountainPassTypeScriptProjectOptions: Required<BaseMountainP
     allowedUsernames: ["dependabot[bot]"],
     label: "auto-approve",
     secret: "GITHUB_TOKEN",
+  },
+  githubOptions: {
+    pullRequestLintOptions: {
+      semanticTitleOptions: {
+        types: [
+          "build",
+          "chore",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test",
+        ],
+      },
+    },
   },
 };
 
