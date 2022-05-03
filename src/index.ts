@@ -82,6 +82,12 @@ export const defaultMountainPassTypeScriptProjectOptions: Required<BaseMountainP
       },
     },
   },
+  autoApproveUpgrades: true,
+  autoApproveOptions: {
+    allowedUsernames: ["dependabot[bot]"],
+    label: "auto-approve",
+    secret: "GITHUB_TOKEN",
+  },
 };
 
 /**
