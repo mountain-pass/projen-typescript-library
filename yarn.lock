@@ -3480,14 +3480,14 @@ jsesc@^2.5.1:
   resolved "https://registry.npmjs.org/jsesc/-/jsesc-2.5.2.tgz"
 
 jsii-diff@^1.57.0:
-  version "1.57.0"
-  resolved "https://registry.npmjs.org/jsii-diff/-/jsii-diff-1.57.0.tgz"
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.58.0.tgz#21dd6fe14d90d6e6a11975323bc9798a703d10a0"
   dependencies:
-    "@jsii/check-node" "1.57.0"
-    "@jsii/spec" "^1.57.0"
+    "@jsii/check-node" "1.58.0"
+    "@jsii/spec" "^1.58.0"
     fs-extra "^9.1.0"
-    jsii-reflect "^1.57.0"
-    log4js "^6.4.4"
+    jsii-reflect "^1.58.0"
+    log4js "^6.4.5"
     typescript "~3.9.10"
     yargs "^16.2.0"
 
