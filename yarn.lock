@@ -855,9 +855,16 @@
     chalk "^4.1.2"
     semver "^7.3.5"
 
-"@jsii/spec@1.57.0", "@jsii/spec@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.npmjs.org/@jsii/spec/-/spec-1.57.0.tgz"
+"@jsii/check-node@1.58.0":
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.58.0.tgz#e6c60c2cd4bb13a3d74aec9f3ed33a6f827269bc"
+  dependencies:
+    chalk "^4.1.2"
+    semver "^7.3.7"
+
+"@jsii/spec@1.58.0", "@jsii/spec@^1.57.0", "@jsii/spec@^1.58.0":
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.58.0.tgz#ae64a7142784bfdd3ce021fdc3363717cefbe9bb"
   dependencies:
     jsonschema "^1.4.0"
 
@@ -1518,9 +1525,9 @@ co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
 
-codemaker@^1.57.0:
-  version "1.57.0"
-  resolved "https://registry.npmjs.org/codemaker/-/codemaker-1.57.0.tgz"
+codemaker@^1.58.0:
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/codemaker/-/codemaker-1.58.0.tgz#6eefc6feff1200956d620649188563531de4c151"
   dependencies:
     camelcase "^6.3.0"
     decamelize "^5.0.1"
@@ -3529,53 +3536,71 @@ jsii-docgen@^6.3.26:
     yargs "^16.2.0"
 
 jsii-pacmak@^1.57.0:
-  version "1.57.0"
-  resolved "https://registry.npmjs.org/jsii-pacmak/-/jsii-pacmak-1.57.0.tgz"
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/jsii-pacmak/-/jsii-pacmak-1.58.0.tgz#0d555a929e4a2ea8af79dc3466b3021b96956cf5"
   dependencies:
-    "@jsii/check-node" "1.57.0"
-    "@jsii/spec" "^1.57.0"
+    "@jsii/check-node" "1.58.0"
+    "@jsii/spec" "^1.58.0"
     clone "^2.1.2"
-    codemaker "^1.57.0"
+    codemaker "^1.58.0"
     commonmark "^0.30.0"
     escape-string-regexp "^4.0.0"
     fs-extra "^9.1.0"
-    jsii-reflect "^1.57.0"
-    jsii-rosetta "^1.57.0"
-    semver "^7.3.5"
+    jsii-reflect "^1.58.0"
+    jsii-rosetta "^1.58.0"
+    semver "^7.3.7"
     spdx-license-list "^6.5.0"
     xmlbuilder "^15.1.1"
     yargs "^16.2.0"
 
-jsii-reflect@^1.57.0:
-  version "1.57.0"
-  resolved "https://registry.npmjs.org/jsii-reflect/-/jsii-reflect-1.57.0.tgz"
+jsii-reflect@^1.57.0, jsii-reflect@^1.58.0:
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/jsii-reflect/-/jsii-reflect-1.58.0.tgz#7959aa15db8e32629d4e7005e68f01964cadd852"
   dependencies:
-    "@jsii/check-node" "1.57.0"
-    "@jsii/spec" "^1.57.0"
+    "@jsii/check-node" "1.58.0"
+    "@jsii/spec" "^1.58.0"
     chalk "^4"
     fs-extra "^9.1.0"
-    oo-ascii-tree "^1.57.0"
+    oo-ascii-tree "^1.58.0"
     yargs "^16.2.0"
 
-jsii-rosetta@^1.57.0:
-  version "1.57.0"
-  resolved "https://registry.npmjs.org/jsii-rosetta/-/jsii-rosetta-1.57.0.tgz"
+jsii-rosetta@^1.57.0, jsii-rosetta@^1.58.0:
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-1.58.0.tgz#9b605dc6f4acb64c0f72aab2898d220bc446e269"
   dependencies:
-    "@jsii/check-node" "1.57.0"
-    "@jsii/spec" "1.57.0"
+    "@jsii/check-node" "1.58.0"
+    "@jsii/spec" "1.58.0"
     "@xmldom/xmldom" "^0.8.2"
     commonmark "^0.30.0"
     fast-glob "^3.2.11"
     fs-extra "^9.1.0"
-    jsii "1.57.0"
-    semver "^7.3.5"
+    jsii "1.58.0"
+    semver "^7.3.7"
     semver-intersect "^1.4.0"
     sort-json "^2.0.1"
     typescript "~3.9.10"
-    workerpool "^6.2.0"
+    workerpool "^6.2.1"
     yargs "^16.2.0"
 
-jsii@1.57.0, jsii@^1.57.0:
+jsii@1.58.0:
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.58.0.tgz#9a01c2417b93413570e52a0833d4e9ac6fb538eb"
+  dependencies:
+    "@jsii/check-node" "1.58.0"
+    "@jsii/spec" "^1.58.0"
+    case "^1.6.3"
+    chalk "^4"
+    deep-equal "^2.0.5"
+    fs-extra "^9.1.0"
+    log4js "^6.4.5"
+    semver "^7.3.7"
+    semver-intersect "^1.4.0"
+    sort-json "^2.0.1"
+    spdx-license-list "^6.5.0"
+    typescript "~3.9.10"
+    yargs "^16.2.0"
+
+jsii@^1.57.0:
   version "1.57.0"
   resolved "https://registry.npmjs.org/jsii/-/jsii-1.57.0.tgz"
   dependencies:
@@ -3728,7 +3753,7 @@ lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
 
-log4js@^6.4.4:
+log4js@^6.4.4, log4js@^6.4.5:
   version "6.4.6"
   resolved "https://registry.npmjs.org/log4js/-/log4js-6.4.6.tgz"
   dependencies:
@@ -3969,9 +3994,9 @@ onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-oo-ascii-tree@^1.57.0:
-  version "1.57.0"
-  resolved "https://registry.npmjs.org/oo-ascii-tree/-/oo-ascii-tree-1.57.0.tgz"
+oo-ascii-tree@^1.58.0:
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/oo-ascii-tree/-/oo-ascii-tree-1.58.0.tgz#40c85ebe82b79c56d81bd3590a0c248c41006155"
 
 optionator@^0.8.1:
   version "0.8.3"
@@ -5031,7 +5056,7 @@ wordwrap@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/wordwrap/-/wordwrap-1.0.0.tgz"
 
-workerpool@^6.2.0:
+workerpool@^6.2.1:
   version "6.2.1"
   resolved "https://registry.npmjs.org/workerpool/-/workerpool-6.2.1.tgz"
 
