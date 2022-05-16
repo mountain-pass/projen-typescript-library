@@ -1035,8 +1035,8 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.31.tgz"
 
 "@types/node@^12":
-  version "12.20.51"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.51.tgz#8bc65be17b95ab6dc89b70839598aeff43ded9c5"
+  version "12.20.52"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.52.tgz#2fd2dc6bfa185601b15457398d4ba1ef27f81251"
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
