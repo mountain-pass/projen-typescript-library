@@ -855,13 +855,6 @@
     chalk "^4.1.2"
     semver "^7.3.5"
 
-"@jsii/check-node@1.58.0":
-  version "1.58.0"
-  resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.58.0.tgz#e6c60c2cd4bb13a3d74aec9f3ed33a6f827269bc"
-  dependencies:
-    chalk "^4.1.2"
-    semver "^7.3.7"
-
 "@jsii/check-node@1.59.0":
   version "1.59.0"
   resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.59.0.tgz#60112ad890432b9dec18d2d0528539e8ca23060f"
@@ -869,7 +862,7 @@
     chalk "^4.1.2"
     semver "^7.3.7"
 
-"@jsii/spec@1.59.0", "@jsii/spec@^1.57.0", "@jsii/spec@^1.58.0", "@jsii/spec@^1.59.0":
+"@jsii/spec@1.59.0", "@jsii/spec@^1.57.0", "@jsii/spec@^1.59.0":
   version "1.59.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.59.0.tgz#ec926963514ab041eac4befb68f89e61d72b4413"
   dependencies:
@@ -1919,10 +1912,6 @@ data-urls@^2.0.0:
 date-format@^4.0.10:
   version "4.0.10"
   resolved "https://registry.yarnpkg.com/date-format/-/date-format-4.0.10.tgz#7aa4bc0ad0c79f4ba858290e5dbb47f27d602e79"
-
-date-format@^4.0.9:
-  version "4.0.9"
-  resolved "https://registry.npmjs.org/date-format/-/date-format-4.0.9.tgz"
 
 dateformat@^3.0.0:
   version "3.0.3"
@@ -3507,14 +3496,14 @@ jsesc@^2.5.1:
   resolved "https://registry.npmjs.org/jsesc/-/jsesc-2.5.2.tgz"
 
 jsii-diff@^1.57.0:
-  version "1.58.0"
-  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.58.0.tgz#21dd6fe14d90d6e6a11975323bc9798a703d10a0"
+  version "1.59.0"
+  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.59.0.tgz#ada4a60b6361f1e7b04d4384adf02fe25637628c"
   dependencies:
-    "@jsii/check-node" "1.58.0"
-    "@jsii/spec" "^1.58.0"
+    "@jsii/check-node" "1.59.0"
+    "@jsii/spec" "^1.59.0"
     fs-extra "^9.1.0"
-    jsii-reflect "^1.58.0"
-    log4js "^6.4.5"
+    jsii-reflect "^1.59.0"
+    log4js "^6.4.6"
     typescript "~3.9.10"
     yargs "^16.2.0"
 
@@ -3550,7 +3539,7 @@ jsii-pacmak@^1.57.0:
     xmlbuilder "^15.1.1"
     yargs "^16.2.0"
 
-jsii-reflect@^1.57.0, jsii-reflect@^1.58.0, jsii-reflect@^1.59.0:
+jsii-reflect@^1.57.0, jsii-reflect@^1.59.0:
   version "1.59.0"
   resolved "https://registry.yarnpkg.com/jsii-reflect/-/jsii-reflect-1.59.0.tgz#099ca3b9b20c76a707ad7022d9f0a6f4ce17888f"
   dependencies:
@@ -3750,17 +3739,7 @@ lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
 
-log4js@^6.4.4, log4js@^6.4.5:
-  version "6.4.6"
-  resolved "https://registry.npmjs.org/log4js/-/log4js-6.4.6.tgz"
-  dependencies:
-    date-format "^4.0.9"
-    debug "^4.3.4"
-    flatted "^3.2.5"
-    rfdc "^1.3.0"
-    streamroller "^3.0.8"
-
-log4js@^6.4.6:
+log4js@^6.4.4, log4js@^6.4.6:
   version "6.4.7"
   resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.4.7.tgz#adba3797606664e83567d2fbf38fa14b9d809167"
   dependencies:
@@ -4570,14 +4549,6 @@ standard-version@^9:
     semver "^7.1.1"
     stringify-package "^1.0.1"
     yargs "^16.0.0"
-
-streamroller@^3.0.8:
-  version "3.0.8"
-  resolved "https://registry.npmjs.org/streamroller/-/streamroller-3.0.8.tgz"
-  dependencies:
-    date-format "^4.0.9"
-    debug "^4.3.4"
-    fs-extra "^10.1.0"
 
 streamroller@^3.0.9:
   version "3.0.9"
