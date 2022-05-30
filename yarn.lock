@@ -435,9 +435,10 @@
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@cspell/cspell-pipe/-/cspell-pipe-6.0.0.tgz#aad5c6ecfa36f28a75d8b4050d4607d1d77a644b"
 
-"@cspell/cspell-types@^6.0.0":
+"@cspell/cspell-types@*", "@cspell/cspell-types@^6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@cspell/cspell-types/-/cspell-types-6.0.0.tgz#a65aea274438cdbba0c0ef24ba52cd80cd89be9a"
+  integrity sha512-N8wGQU+n64s3cIMC/5WJzo6UT/Jetxz6oSdOr0SksCHO84I6QR1ORwsXM3ej7x6490uoTM+cf11CSYrw6ma+bg==
 
 "@cspell/dict-ada@^2.0.0":
   version "2.0.0"
@@ -608,6 +609,13 @@
   resolved "https://registry.npmjs.org/@cspotcode/source-map-support/-/source-map-support-0.7.0.tgz"
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
+
+"@cspotcode/source-map-support@^0.8.0":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
+  integrity sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==
+  dependencies:
+    "@jridgewell/trace-mapping" "0.3.9"
 
 "@es-joy/jsdoccomment@~0.31.0":
   version "0.31.0"
@@ -4882,8 +4890,9 @@ typedarray@^0.0.6:
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
 
 typescript@^4.4.3, typescript@^4.6.4:
-  version "4.6.4"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.6.4.tgz"
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.2.tgz#1f9aa2ceb9af87cca227813b4310fff0b51593c4"
+  integrity sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==
 
 typescript@~3.9.10:
   version "3.9.10"
