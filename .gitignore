@@ -53,7 +53,11 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
-!/.vscode/extensions.json
-!/.husky/pre-commit
 !/.commitlintrc.json
+!/CODE_OF_CONDUCT.md
+/docs
+!/.husky/pre-commit
 !/.husky/commit-msg
+!/.husky/pre-push
+!/.vscode/extensions.json
+!/.cspell.json

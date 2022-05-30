@@ -4,7 +4,7 @@ A customised Typescript project type with extra linting for Projen
 
 ## usage
 
-- If the `gh` commandline is not installed, [install it](https://github.com/cli/cli#installation)
+- If the `gh` command-line is not installed, [install it](https://github.com/cli/cli#installation)
 - run the following commands
   
 ```sh

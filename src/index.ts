@@ -132,6 +132,7 @@ export class MountainPassTypeScriptProject extends TypeScriptProject {
       defaultMountainPassTypeScriptProjectOptions,
       options
     );
+
     const generatedOptions = Object.assign(
       {
         packageName: `@mountainpass/${mergedOptions.name}`,

@@ -1,55 +1,121 @@
-import { cdk } from "projen";
 import {
-  addContributors,
-  defaultMountainPassTypeScriptProjectOptions,
-  fixTypedocVersion,
-  maybeAddCommitlint,
-  maybeAddCSpell,
-  maybeAddExtensionRecommendations,
-  maybeAddHusky,
-  maybeAddJsdoc,
-  maybeAddPrettier,
-  maybeAddUnicorn,
-} from "./src";
+  Recommended,
+  Organisational,
+  CodeOfConduct,
+  GitHubber,
+  NpmReleaser,
+} from "@mountainpass/cool-bits-for-projen";
+import { cdk } from "projen";
+import { NpmAccess } from "projen/lib/javascript";
+import { defaultMountainPassTypeScriptProjectOptions } from "./src";
 
-const name = "projen-typescript-library";
+const gitHubber = new GitHubber({
+  name: "projen-typescript-library",
+  username: "mountain-pass",
+});
 
-const projectOptions = Object.assign(
-  {},
-  defaultMountainPassTypeScriptProjectOptions,
-  {
-    name,
-    description:
-      "A customised Typescript project type with extra linting for Projen",
-    peerDeps: ["projen"],
-    devDeps: ["fs-extra", "@types/fs-extra"],
-    keywords: ["typescript", "projen", "jsii"],
-    packageName: `@mountainpass/${name}`,
-    homepage: `https://github.com/mountain-pass/${name}`,
-    repository: `https://github.com/mountain-pass/${name}.git`,
-    repositoryUrl: `https://github.com/mountain-pass/${name}.git`,
-    bugsUrl: `https://github.com/mountain-pass/${name}/issues`,
-    author: "Mountain Pass",
-    authorAddress: "info@mountain-pass.com.au",
-    defaultReleaseBranch: "main",
-  }
+const npmReleaser = new NpmReleaser(gitHubber, {
+  scope: "mountainpass",
+  access: NpmAccess.PUBLIC,
+});
+
+const organisational = new Organisational({
+  organisation: {
+    name: "Mountain Pass",
+    email: "info@mountain-pass.com.au",
+    url: "https://mountain-pass.com.au",
+  },
+});
+
+const project = new cdk.JsiiProject({
+  ...gitHubber.jsiiProjectOptions(),
+  ...organisational.jsiiProjectOptions(),
+  ...npmReleaser.nodeProjectOptions(),
+  ...Recommended.defaultProjectOptions,
+  ...defaultMountainPassTypeScriptProjectOptions,
+  description:
+    "A customised Typescript project type with extra linting for Projen",
+  peerDeps: ["projen"],
+  devDeps: ["fs-extra", "@types/fs-extra"],
+  deps: ["@mountainpass/cool-bits-for-projen"],
+  keywords: ["typescript", "projen", "jsii"],
+  defaultReleaseBranch: "main",
+  tsconfig: {
+    compilerOptions: {
+      esModuleInterop: true,
+    },
+  },
+  projenrcTs: true,
+  license: "Apache-2.0",
+  codeCov: true,
+  buildWorkflowTriggers: {
+    pullRequest: {},
+    workflowDispatch: {},
+    push: { branches: ["main"] },
+  },
+  docgen: true,
+  eslintOptions: {
+    dirs: ["."],
+  },
+  dependabot: true,
+  dependabotOptions: {
+    labels: ["auto-approve"],
+  },
+  jestOptions: {
+    jestConfig: {
+      coverageThreshold: {
+        branches: 100,
+        functions: 100,
+        lines: 100,
+        statements: 100,
+      },
+    },
+  },
+  autoApproveUpgrades: true,
+  autoApproveOptions: {
+    allowedUsernames: ["dependabot[bot]"],
+    label: "auto-approve",
+    secret: "GITHUB_TOKEN",
+  },
+  githubOptions: {
+    pullRequestLintOptions: {
+      semanticTitleOptions: {
+        types: [
+          "build",
+          "chore",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test",
+        ],
+      },
+    },
+  },
+});
+organisational.addToProject(project);
+
+const recommended = new Recommended(project, {
+  cSpellOptions: {
+    language: "en-GB",
+    ignorePaths: ["./API.md"],
+  },
+});
+
+gitHubber.addToProject(project);
+gitHubber.addDependencies({ cSpell: recommended.cSpell });
+npmReleaser.addToProject(project);
+
+new CodeOfConduct(
+  project,
+  { contactMethod: "tom@mountain-pass.com.au" },
+  { cSpell: recommended.cSpell }
 );
-const project = new cdk.JsiiProject(projectOptions);
 
-addContributors(project, "Tom Howard <tom@mountainpass.com.au>");
-
-fixTypedocVersion(project);
-
-maybeAddExtensionRecommendations(project, projectOptions);
-
-maybeAddHusky(project, projectOptions);
-
-maybeAddCommitlint(project, projectOptions);
-maybeAddCSpell(project, projectOptions);
-
-maybeAddUnicorn(project, projectOptions);
-maybeAddJsdoc(project, projectOptions);
-// prettier needs to be last of the eslint options
-maybeAddPrettier(project, projectOptions);
+project.addGitIgnore("/docs");
 
 project.synth();
