@@ -37,7 +37,7 @@ const project = new cdk.JsiiProject({
     "A customised Typescript project type with extra linting for Projen",
   peerDeps: ["projen"],
   devDeps: ["fs-extra", "@types/fs-extra"],
-  deps: ["@mountainpass/cool-bits-for-projen"],
+  bundledDeps: ["@mountainpass/cool-bits-for-projen"],
   keywords: ["typescript", "projen", "jsii"],
   defaultReleaseBranch: "main",
   projenrcTs: true,
