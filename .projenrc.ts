@@ -7,7 +7,7 @@ import {
 } from "@mountainpass/cool-bits-for-projen";
 import { cdk } from "projen";
 import { NpmAccess } from "projen/lib/javascript";
-import { defaultMountainPassTypeScriptProjectOptions } from "./src";
+import { MountainPassTypeScriptProject } from "./src";
 
 const gitHubber = new GitHubber({
   name: "projen-typescript-library",
@@ -32,7 +32,7 @@ const project = new cdk.JsiiProject({
   ...organisational.jsiiProjectOptions(),
   ...npmReleaser.nodeProjectOptions(),
   ...Recommended.defaultProjectOptions,
-  ...defaultMountainPassTypeScriptProjectOptions,
+  ...MountainPassTypeScriptProject.defaultProjectOptions,
   description:
     "A customised Typescript project type with extra linting for Projen",
   peerDeps: ["projen"],
@@ -40,62 +40,7 @@ const project = new cdk.JsiiProject({
   deps: ["@mountainpass/cool-bits-for-projen"],
   keywords: ["typescript", "projen", "jsii"],
   defaultReleaseBranch: "main",
-  tsconfig: {
-    compilerOptions: {
-      esModuleInterop: true,
-    },
-  },
   projenrcTs: true,
-  license: "Apache-2.0",
-  codeCov: true,
-  buildWorkflowTriggers: {
-    pullRequest: {},
-    workflowDispatch: {},
-    push: { branches: ["main"] },
-  },
-  docgen: true,
-  eslintOptions: {
-    dirs: ["."],
-  },
-  dependabot: true,
-  dependabotOptions: {
-    labels: ["auto-approve"],
-  },
-  jestOptions: {
-    jestConfig: {
-      coverageThreshold: {
-        branches: 100,
-        functions: 100,
-        lines: 100,
-        statements: 100,
-      },
-    },
-  },
-  autoApproveUpgrades: true,
-  autoApproveOptions: {
-    allowedUsernames: ["dependabot[bot]"],
-    label: "auto-approve",
-    secret: "GITHUB_TOKEN",
-  },
-  githubOptions: {
-    pullRequestLintOptions: {
-      semanticTitleOptions: {
-        types: [
-          "build",
-          "chore",
-          "ci",
-          "docs",
-          "feat",
-          "fix",
-          "perf",
-          "refactor",
-          "revert",
-          "style",
-          "test",
-        ],
-      },
-    },
-  },
 });
 organisational.addToProject(project);
 

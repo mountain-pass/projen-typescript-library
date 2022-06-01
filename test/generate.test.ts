@@ -6,9 +6,6 @@ test("all required files are added", () => {
   const project = new MountainPassTypeScriptProject({
     outdir: mkdtemp(),
     name: "test-project",
-    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
-    author: "Mountain Pass",
-    authorAddress: "info@mountain-pass.com.au",
     defaultReleaseBranch: "main",
   });
 
@@ -18,10 +15,10 @@ test("all required files are added", () => {
   // const outDir = project.outdir.substr(1);
 
   expect(Object.keys(snapshot)).toContain(".commitlintrc.json");
-  expect(Object.keys(snapshot)).toContain("cspell.json");
+  expect(Object.keys(snapshot)).toContain(".cspell.json");
   expect(Object.keys(snapshot)).toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).toContain(".husky/commit-msg");
-  expect(Object.keys(snapshot)).toContain(".husky/pre-commit");
+  expect(Object.keys(snapshot)).toContain(".husky/pre-push");
 });
 
 test("works with bits turned off", () => {
@@ -34,10 +31,7 @@ test("works with bits turned off", () => {
     eslintJsdoc: false,
     eslintUnicorn: false,
     cSpell: false,
-    vscodeExtensions: false,
-    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
-    author: "Mountain Pass",
-    authorAddress: "info@mountain-pass.com.au",
+    vscodeExtensionRecommendations: false,
     defaultReleaseBranch: "main",
   });
 
@@ -47,10 +41,10 @@ test("works with bits turned off", () => {
   // const outDir = project.outdir.substr(1);
 
   expect(Object.keys(snapshot)).not.toContain(".commitlintrc.json");
-  expect(Object.keys(snapshot)).not.toContain("cspell.json");
+  expect(Object.keys(snapshot)).not.toContain(".cspell.json");
   expect(Object.keys(snapshot)).not.toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).not.toContain(".husky/commit-msg");
-  expect(Object.keys(snapshot)).not.toContain(".husky/pre-commit");
+  expect(Object.keys(snapshot)).not.toContain(".husky/pre-push");
 });
 
 test("works with husky on and commitlint off", () => {
@@ -63,10 +57,7 @@ test("works with husky on and commitlint off", () => {
     eslintJsdoc: false,
     eslintUnicorn: false,
     cSpell: false,
-    vscodeExtensions: false,
-    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
-    author: "Mountain Pass",
-    authorAddress: "info@mountain-pass.com.au",
+    vscodeExtensionRecommendations: false,
     defaultReleaseBranch: "main",
   });
 
@@ -74,10 +65,10 @@ test("works with husky on and commitlint off", () => {
   const snapshot = synthSnapshot(project);
 
   expect(Object.keys(snapshot)).not.toContain(".commitlintrc.json");
-  expect(Object.keys(snapshot)).not.toContain("cspell.json");
+  expect(Object.keys(snapshot)).not.toContain(".cspell.json");
   expect(Object.keys(snapshot)).not.toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).not.toContain(".husky/commit-msg");
-  expect(Object.keys(snapshot)).toContain(".husky/pre-commit");
+  expect(Object.keys(snapshot)).toContain(".husky/pre-push");
 });
 
 test("works with husky off and commitlint on", () => {
@@ -90,10 +81,7 @@ test("works with husky off and commitlint on", () => {
     eslintJsdoc: false,
     eslintUnicorn: false,
     cSpell: false,
-    vscodeExtensions: false,
-    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
-    author: "Mountain Pass",
-    authorAddress: "info@mountain-pass.com.au",
+    vscodeExtensionRecommendations: false,
     defaultReleaseBranch: "main",
   });
 
@@ -101,10 +89,10 @@ test("works with husky off and commitlint on", () => {
   const snapshot = synthSnapshot(project);
 
   expect(Object.keys(snapshot)).toContain(".commitlintrc.json");
-  expect(Object.keys(snapshot)).not.toContain("cspell.json");
+  expect(Object.keys(snapshot)).not.toContain(".cspell.json");
   expect(Object.keys(snapshot)).not.toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).not.toContain(".husky/commit-msg");
-  expect(Object.keys(snapshot)).not.toContain(".husky/pre-commit");
+  expect(Object.keys(snapshot)).not.toContain(".husky/pre-push");
 });
 
 test("works with eslint off", () => {
@@ -113,9 +101,6 @@ test("works with eslint off", () => {
     outdir: mkdtemp(),
     name: "test-project",
     eslint: false,
-    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
-    author: "Mountain Pass",
-    authorAddress: "info@mountain-pass.com.au",
     defaultReleaseBranch: "main",
   });
 
@@ -123,10 +108,10 @@ test("works with eslint off", () => {
   const snapshot = synthSnapshot(project);
 
   expect(Object.keys(snapshot)).toContain(".commitlintrc.json");
-  expect(Object.keys(snapshot)).toContain("cspell.json");
+  expect(Object.keys(snapshot)).toContain(".cspell.json");
   expect(Object.keys(snapshot)).toContain(".vscode/extensions.json");
   expect(Object.keys(snapshot)).toContain(".husky/commit-msg");
-  expect(Object.keys(snapshot)).toContain(".husky/pre-commit");
+  expect(Object.keys(snapshot)).toContain(".husky/pre-push");
 });
 
 test("can add contributors", () => {
@@ -134,9 +119,6 @@ test("can add contributors", () => {
   const project = new MountainPassTypeScriptProject({
     outdir: mkdtemp(),
     name: "test-project",
-    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
-    author: "Mountain Pass",
-    authorAddress: "info@mountain-pass.com.au",
     defaultReleaseBranch: "main",
   });
   const contributors = [
@@ -144,7 +126,7 @@ test("can add contributors", () => {
     "Oliver Klozoff <Oliver@Klozoff.com>",
   ];
 
-  project.addContributors(...contributors);
+  project.recommended.contributors.addContributors(...contributors);
 
   // THEN
   const snapshot = synthSnapshot(project);
@@ -161,9 +143,6 @@ test("can add description", () => {
     outdir: mkdtemp(),
     name: "test-project",
     description,
-    repositoryUrl: `https://github.com/mountain-pass/projen-typescript-library.git`,
-    author: "Mountain Pass",
-    authorAddress: "info@mountain-pass.com.au",
     defaultReleaseBranch: "main",
   });
 
