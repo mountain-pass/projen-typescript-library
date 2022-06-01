@@ -945,9 +945,9 @@
     jsonschema "^1.4.0"
 
 "@mountainpass/cool-bits-for-projen@^0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@mountainpass/cool-bits-for-projen/-/cool-bits-for-projen-0.1.10.tgz#25eea8e33f20b42fe847b524347b14a2cd2ac610"
-  integrity sha512-3MTX5KHAWgRlubi5vDkBdXqIrOzD1FmQ9zcYN28bJQjNs7tSEAnbfCMWbDz8aOzWh33Ag5OfE0CaBaHUkO5O4A==
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@mountainpass/cool-bits-for-projen/-/cool-bits-for-projen-0.1.11.tgz#1f452bbc7cc9ea42d63bb70d1f5fd7d11b6e6cea"
+  integrity sha512-ajNioOHs1L37Zy/CCfP8dfsfnj2fVV+Vdi0LxkaufA+GGu8rRCViyBkXUfdcsSY4+n8vQAQ23aFmCIqEK33ndA==
   dependencies:
     "@commitlint/types" "^16.2.1"
     "@cspell/cspell-types" "*"
